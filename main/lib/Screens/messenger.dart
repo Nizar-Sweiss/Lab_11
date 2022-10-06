@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:main/Components/online_users.dart';
 import 'package:main/Components/user_messeges.dart';
 
+import '../Components/clean_rounded_search_bar.dart';
 import '../Models/OnlineUserModel.dart';
 
 class MessengerScreen extends StatefulWidget {
@@ -39,7 +40,7 @@ class _MessengerScreenState extends State<MessengerScreen> {
         backgroundColor: Color.fromARGB(255, 61, 105, 147),
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: Color.fromARGB(250, 169, 120, 120),
+          backgroundColor: Color.fromARGB(255, 37, 65, 91),
           title: Row(
             children: [
               CircleAvatar(
@@ -83,27 +84,15 @@ class _MessengerScreenState extends State<MessengerScreen> {
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Container(
-                padding: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Color.fromARGB(93, 0, 0, 0),
-                ),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.search,
-                      color: Colors.white,
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Text(
-                      "Search",
-                      style: TextStyle(color: Colors.white),
-                    )
-                  ],
-                ),
-              ),
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color.fromARGB(93, 0, 0, 0),
+                  ),
+                  child: RoundedSearchInput(
+                    hintText: "Search",
+                    textController: TextEditingController(),
+                  )),
               SizedBox(
                 height: 20,
               ),
