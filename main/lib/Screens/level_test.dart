@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:main/Models/Questions.dart';
 
 import '../Components/gradient_button_1.dart';
 
@@ -16,6 +17,13 @@ class _LevelTestState extends State<LevelTest> {
     "Option 3 ",
     "Option 4 ",
   ];
+  Question testQ1 =
+      Question(id: 1, question: "THee question", answer: 2, options: [
+    "Option 11 ",
+    "Option 22 ",
+    "Option 33 ",
+    "Option 44 ",
+  ]);
   String userAnswer = "";
   @override
   Widget build(BuildContext context) {
@@ -35,7 +43,7 @@ class _LevelTestState extends State<LevelTest> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  "The Question ",
+                  testQ1.question,
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
               ),
@@ -60,7 +68,7 @@ class _LevelTestState extends State<LevelTest> {
                       ),
                       child: RadioListTile(
                         title: Text(
-                          options[index],
+                          testQ1.options[index],
                           style: TextStyle(color: Colors.white),
                         ),
                         activeColor: Colors.white,
