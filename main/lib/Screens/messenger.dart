@@ -83,16 +83,10 @@ class _MessengerScreenState extends State<MessengerScreen> {
           child: SingleChildScrollView(
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Container(
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Color.fromARGB(93, 0, 0, 0),
-                  ),
-                  child: RoundedSearchInput(
-                    hintText: "Search",
-                    textController: TextEditingController(),
-                  )),
+              RoundedSearchInput(
+                hintText: "Search",
+                textController: TextEditingController(),
+              ),
               SizedBox(
                 height: 20,
               ),
