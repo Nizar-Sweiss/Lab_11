@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:main/Screens/messenger.dart';
 
+import 'Screens/Home.dart';
+import 'Screens/Tobics.dart';
+import 'Screens/levels.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(routes: {
+    "Level": (context) => const Level(),
+    "Home": (context) => Home(),
+    "Tobics": (context) => Tobics()
+  }, home: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -10,6 +18,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MessengerScreen();
+    return Home();
   }
 }
