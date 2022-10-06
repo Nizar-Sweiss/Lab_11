@@ -2,14 +2,35 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:main/Components/online_users.dart';
+import 'package:main/Components/user_messeges.dart';
 
-void main() {
-  runApp(MessengerScreen());
-}
+import '../Models/OnlineUserModel.dart';
 
-class MessengerScreen extends StatelessWidget {
+class MessengerScreen extends StatefulWidget {
   const MessengerScreen({super.key});
 
+  @override
+  State<MessengerScreen> createState() => _MessengerScreenState();
+}
+
+List<OnlineUserModel> users = [
+  OnlineUserModel(
+      userMessege: 'Say hi', userName: 'Test1', userPFP: "images/pfpPic.jpg"),
+  OnlineUserModel(
+      userMessege: 'Say hi', userName: 'Test2', userPFP: "images/pfpPic.jpg"),
+  OnlineUserModel(
+      userMessege: 'Say hi', userName: 'Test3', userPFP: "images/pfpPic.jpg"),
+  OnlineUserModel(
+      userMessege: 'Say hi', userName: 'Test4', userPFP: "images/pfpPic.jpg"),
+  OnlineUserModel(
+      userMessege: 'Say hi', userName: 'Test5', userPFP: "images/pfpPic.jpg"),
+  OnlineUserModel(
+      userMessege: 'Say hi', userName: 'Test6', userPFP: "images/pfpPic.jpg"),
+  OnlineUserModel(
+      userMessege: 'Say hi', userName: 'Test7', userPFP: "images/pfpPic.jpg"),
+];
+
+class _MessengerScreenState extends State<MessengerScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +39,7 @@ class MessengerScreen extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 61, 105, 147),
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: Color.fromARGB(251, 109, 2, 2),
+          backgroundColor: Color.fromARGB(250, 169, 120, 120),
           title: Row(
             children: [
               CircleAvatar(
@@ -58,253 +79,61 @@ class MessengerScreen extends StatelessWidget {
         ),
         body: Padding(
           padding: const EdgeInsets.all(18.0),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Container(
-              padding: EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color.fromARGB(93, 0, 0, 0),
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.search,
-                    color: Colors.white,
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Text(
-                    "Search",
-                    style: TextStyle(color: Colors.white),
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            OnlineUser(
-              friendPFP: "images/pfpPic.jpg",
-              friendName: 'Test 1 ',
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Column(
+          child: SingleChildScrollView(
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Container(
+                padding: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Color.fromARGB(93, 0, 0, 0),
+                ),
+                child: Row(
                   children: [
-                    Row(
-                      children: [
-                        Stack(
-                          alignment: AlignmentDirectional.bottomEnd,
-                          children: [
-                            CircleAvatar(
-                              radius: 30,
-                              backgroundImage: AssetImage("images/pfpPic.jpg"),
-                            ),
-                            CircleAvatar(
-                              radius: 9,
-                              backgroundColor: Color.fromARGB(251, 109, 2, 2),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.only(
-                                  bottom: 3, end: 2),
-                              child: CircleAvatar(
-                                radius: 7,
-                                backgroundColor: Colors.green,
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Name Two",
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      "THE MESSAGE IS HERE ",
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "Time",
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        )
-                      ],
+                    Icon(
+                      Icons.search,
+                      color: Colors.white,
                     ),
                     SizedBox(
-                      height: 20,
+                      width: 15,
                     ),
-                    Row(
-                      children: [
-                        Stack(
-                          alignment: AlignmentDirectional.bottomEnd,
-                          children: [
-                            CircleAvatar(
-                              radius: 30,
-                              backgroundImage: AssetImage("images/pfpPic.jpg"),
-                            ),
-                            CircleAvatar(
-                              radius: 9,
-                              backgroundColor: Color.fromARGB(251, 109, 2, 2),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.only(
-                                  bottom: 3, end: 2),
-                              child: CircleAvatar(
-                                radius: 7,
-                                backgroundColor: Colors.green,
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Name Two",
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      "THE MESSAGE IS HERE ",
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "Time",
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      children: [
-                        Stack(
-                          alignment: AlignmentDirectional.bottomEnd,
-                          children: [
-                            CircleAvatar(
-                              radius: 30,
-                              backgroundImage: AssetImage("images/pfpPic.jpg"),
-                            ),
-                            CircleAvatar(
-                              radius: 9,
-                              backgroundColor: Color.fromARGB(251, 109, 2, 2),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.only(
-                                  bottom: 3, end: 2),
-                              child: CircleAvatar(
-                                radius: 7,
-                                backgroundColor: Colors.green,
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Text(
-                                  "Name TwoName TwoName TwoName TwoName TwoName TwoName Two",
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      "THE MESSAGE IS HERE ",
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "Time",
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        )
-                      ],
+                    Text(
+                      "Search",
+                      style: TextStyle(color: Colors.white),
                     )
                   ],
                 ),
               ),
-            ),
-          ]),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: 100,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => OnlineUser(users[index]),
+                  itemCount: users.length,
+                  separatorBuilder: (BuildContext context, int index) =>
+                      SizedBox(
+                    width: 15,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              ListView.separated(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                itemBuilder: (context, index) => UserMesseges(users[index]),
+                itemCount: users.length,
+                separatorBuilder: (BuildContext context, int index) => SizedBox(
+                  height: 20,
+                ),
+              ),
+            ]),
+          ),
         ),
       ),
     );
