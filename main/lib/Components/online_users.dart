@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:main/Models/OnlineUserModel.dart';
-import 'package:main/Screens/messenger.dart';
 
 Widget OnlineUser(OnlineUserModel user) => Row(
       children: [
