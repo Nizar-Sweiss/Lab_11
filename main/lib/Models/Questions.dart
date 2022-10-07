@@ -2,12 +2,15 @@ class Question {
   final int id, answer;
   final String question;
   final List<String> options;
+  static List<Question> questionBank = [];
 
   Question(
       {required this.id,
       required this.question,
       required this.answer,
-      required this.options});
+      required this.options}) {
+    questionBank.add(this);
+  }
 }
 
 const List sample_data = [
