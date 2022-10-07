@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'dart:async';
 
-class GrammerLesson1 extends StatelessWidget {
-  const GrammerLesson1({super.key});
+class GrammerLesson2 extends StatelessWidget {
+  const GrammerLesson2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,21 +14,21 @@ class GrammerLesson1 extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const GrammerLesson1Screen(title: 'First Scenario'),
+      home: const GrammerLesson2Screen(title: 'Second Scenario'),
     );
   }
 }
 
-class GrammerLesson1Screen extends StatefulWidget {
-  const GrammerLesson1Screen({super.key, required this.title});
+class GrammerLesson2Screen extends StatefulWidget {
+  const GrammerLesson2Screen({super.key, required this.title});
 
   final String title;
 
   @override
-  State<GrammerLesson1Screen> createState() => _GrammerLesson1ScreenState();
+  State<GrammerLesson2Screen> createState() => _GrammerLesson2ScreenState();
 }
 
-class _GrammerLesson1ScreenState extends State<GrammerLesson1Screen> {
+class _GrammerLesson2ScreenState extends State<GrammerLesson2Screen> {
   final player = AudioPlayer();
   bool isPlaying = false;
   Duration duration = Duration.zero;
@@ -75,7 +75,7 @@ class _GrammerLesson1ScreenState extends State<GrammerLesson1Screen> {
             alignment: Alignment.center,
             child: Text(
               maxLines: 2,
-              "Listening English Lesson 1:\nFirst Snow Fall.",
+              "Listening English Lesson 2 \n Jessica's First Day of School.",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,
@@ -160,7 +160,7 @@ class _GrammerLesson1ScreenState extends State<GrammerLesson1Screen> {
                                       player.pause();
                                     } else {
                                       player
-                                          .play(AssetSource('FirstAudio.mp3'));
+                                          .play(AssetSource('SecondAudio.mp3'));
                                     }
                                   },
                                 ),
@@ -188,7 +188,7 @@ class _GrammerLesson1ScreenState extends State<GrammerLesson1Screen> {
                 Container(
                   padding: EdgeInsets.all(10),
                   child: Text(
-                    "Today is November 26th.\n It snowed all day today. \nThe snow is beautiful.  \nThe snow finally stopped.  \nMy sister and I are excited.  \nMy Mom doesn't like the snow.  \nMy Mom has to shovel the drive way.  \nMy sister and I get to play.  \nI put on my hat and mittens.  \nMy Mom puts on my scarf.  \nMy Mom zippers my jacket.  \nMy sister puts on her hat and mittens.  \nMy Mom puts on her scarf.  \nMy Mom zippers her jacket.  \nMy sister and I go outside.  \nWe begin to make a snow man.  \nMy Mom starts to shovel the snow.  \nMy sister and I make snow angels.  \nMy sister and I throw snowballs.  \nIt starts to snow again.  \nWe go inside for hot chocolate.",
+                    "Today is Jessica's first day of kindergarten.  Jessica and her parents walk to school.  Jessica's Mom walks with her to her classroom.  Jessica meets her teacher.  His name is Mr. Parker.  The school bell rings at 8.45 A.M..  Jessica hugs and kisses her Mom goodbye.  Jessica's Mom says I love you.  At 9.00 A.M., Jessica stands for the National anthem.  Mr. Parker calls out children's names.  Each child yells back Here.  Mr. Parker teaches them about letters.  Mr. Parker teaches them about numbers.  At 10:15 A.M. the students have recess.  Recess is fun.  The students get to play and eat.  At 10:30 A.M. the students go to gym class.  At 11:15 A.M. the students return to Mr. Parker's classroom.  Mr. Parker tells the students to sit on the carpet.  Mr. Parker reads the students a story.  Mr. Parker teaches the students a song.  The lunch bell rings.  Jessica's first day of school is over.",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 )

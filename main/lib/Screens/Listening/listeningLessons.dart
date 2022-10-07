@@ -17,7 +17,7 @@ class _ListeningLessonsState extends State<ListeningLessons> {
   ];
   List lessonsRoutes = [
     "GrammerLesson_1",
-    "GrammerLesson_1",
+    "GrammerLesson_2",
     "GrammerLesson_1"
   ];
   @override
