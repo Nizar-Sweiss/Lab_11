@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:main/Lessons.dart';
+import 'package:main/Screens/Lesson1.dart';
+import 'package:main/Screens/Lesson2.dart';
+import 'package:main/Screens/Lesson3.dart';
 import 'package:main/Screens/Level%20Test/level_test.dart';
 import 'package:main/Screens/Level%20Test/test_result.dart';
 
@@ -11,7 +15,10 @@ void main() {
     "Level": (context) => const Level(),
     "Home": (context) => Home(),
     "Tobics": (context) => Tobics(),
-    "TestResult": (context) => TestResult()
+    "TestResult": (context) => TestResult(),
+    "Lesson_1": (context) => Lesson1(),
+    "Lesson_2": (context) => Lesson2(),
+    "Lesson_3": (context) => Lesson3()
   }, home: MyApp()));
 }
 
@@ -20,6 +27,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LevelTest();
+    return Lessons();
   }
 }
