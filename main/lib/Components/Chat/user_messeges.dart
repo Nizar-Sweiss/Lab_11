@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Models/OnlineUserModel.dart';
+import '../../Models/OnlineUserModel.dart';
 
 Widget UserMesseges(OnlineUserModel user) => Expanded(
       child: Column(

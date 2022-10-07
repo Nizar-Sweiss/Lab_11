@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:main/Components/online_users.dart';
-import 'package:main/Components/user_messeges.dart';
+import 'package:main/Components/Chat/online_users.dart';
+import 'package:main/Components/Chat/user_messeges.dart';
 
-import '../Components/clean_rounded_search_bar.dart';
-import '../Models/OnlineUserModel.dart';
+import '../../Components/clean_rounded_search_bar.dart';
+import '../../Models/OnlineUserModel.dart';
 
 class MessengerScreen extends StatefulWidget {
   const MessengerScreen({super.key});

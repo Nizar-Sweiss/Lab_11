@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:main/Screens/level_test.dart';
-import 'package:main/Screens/test_result.dart';
+import 'package:main/Screens/Level%20Test/level_test.dart';
+import 'package:main/Screens/Level%20Test/test_result.dart';
 
 import 'Screens/Home.dart';
 import 'Screens/Tobics.dart';

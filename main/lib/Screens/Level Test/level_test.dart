@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:main/Models/Questions.dart';
-import 'package:main/Screens/test_result.dart';
+import 'package:main/Screens/Level%20Test/test_result.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
-import '../Components/gradient_button_1.dart';
+import '../../Components/gradient_button_1.dart';
 
 class LevelTest extends StatefulWidget {
   const LevelTest({super.key});
@@ -64,7 +64,7 @@ class _QuestionAndAnswersState extends State<QuestionAndAnswers> {
       RoundedLoadingButtonController();
 
   void _doSomething(RoundedLoadingButtonController controller) async {
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 1), () {
       if (userAnswer ==
           Question.questionBank[questionNum]
               .options[Question.questionBank[questionNum].answer - 1]) {
@@ -144,8 +144,10 @@ class _QuestionAndAnswersState extends State<QuestionAndAnswers> {
                       tileColor: Colors.white,
                       value: Question.questionBank[questionNum].options[index],
                       groupValue: userAnswer,
-                      onChanged: (ind) =>
-                          setState(() => userAnswer = ind.toString()),
+                      onChanged: (ind) => setState(() {
+                        userAnswer = ind.toString();
+                        ResetCheckButton(_btnController1);
+                      }),
                     ),
                   ),
                 ),
@@ -188,12 +190,12 @@ class _QuestionAndAnswersState extends State<QuestionAndAnswers> {
 
                   ResetCheckButton(_btnController1);
                 });
-                // print(" useranswer : $userAnswer");
-                // print(questionNum);
+                print(" useranswer : $userAnswer");
+                print("Len Q : ${Question.questionBank.length}");
               })
         ],
       );
     }
-    return Text("data");
+    return Text("");
   }
 }
