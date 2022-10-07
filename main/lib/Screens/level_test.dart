@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:main/Models/Questions.dart';
-
+import 'package:main/Screens/test_result.dart';
+import 'package:rounded_loading_button/rounded_loading_button.dart';
 import '../Components/gradient_button_1.dart';
 
 class LevelTest extends StatefulWidget {
@@ -11,19 +14,6 @@ class LevelTest extends StatefulWidget {
 }
 
 class _LevelTestState extends State<LevelTest> {
-  // List<String> options = [
-  //   "Option 1 ",
-  //   "Option 2 ",
-  //   "Option 3 ",
-  //   "Option 4 ",
-  // ];
-  // Question testQ1 =
-  //     Question(id: 1, question: "THee question", answer: 2, options: [
-  //   "Option 11 ",
-  //   "Option 22 ",
-  //   "Option 33 ",
-  //   "Option 44 ",
-  // ]);
   String userAnswer = "";
   @override
   Widget build(BuildContext context) {
@@ -31,13 +21,16 @@ class _LevelTestState extends State<LevelTest> {
       backgroundColor: Color.fromARGB(255, 61, 105, 147),
       appBar: AppBar(
         title: Text("Test"),
-        actions: [Text("NUMS ")],
+        actions: [Text("$questionNum ")],
       ),
       body: Padding(
           padding: const EdgeInsets.all(8.0), child: QuestionAndAnswers()),
     );
   }
 }
+
+int questionNum = 0;
+int userScore = 0;
 
 class QuestionAndAnswers extends StatefulWidget {
   const QuestionAndAnswers({super.key});
@@ -47,7 +40,6 @@ class QuestionAndAnswers extends StatefulWidget {
 }
 
 class _QuestionAndAnswersState extends State<QuestionAndAnswers> {
-  int questionNum = 0;
   String userAnswer = "";
   Question Q1 = Question(
       id: 1, question: " Q 1 ", answer: 1, options: ["O1 ", "O2", " O3", "O4"]);
@@ -66,12 +58,54 @@ class _QuestionAndAnswersState extends State<QuestionAndAnswers> {
       question: " Q 4 ",
       answer: 4,
       options: ["O14 ", "O24", " O34", "O44"]);
+
+  ///Check button
+  static final RoundedLoadingButtonController _btnController1 =
+      RoundedLoadingButtonController();
+
+  void _doSomething(RoundedLoadingButtonController controller) async {
+    Timer(Duration(seconds: 3), () {
+      if (userAnswer ==
+          Question.questionBank[questionNum]
+              .options[Question.questionBank[questionNum].answer - 1]) {
+        controller.success();
+      } else {
+        controller.error();
+      }
+    });
+  }
+
+  void ResetCheckButton(RoundedLoadingButtonController controller) async {
+    controller.reset();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _btnController1.stateStream.listen((value) {
+      print(value);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     for (Question Element in Question.questionBank) {
       print(questionNum);
       return Column(
         children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              alignment: Alignment.centerRight,
+              child: Text(
+                "Page ${questionNum + 1} / ${Question.questionBank.length}",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
+            ),
+          ),
           Container(
             width: double.infinity,
             height: 100,
@@ -124,14 +158,38 @@ class _QuestionAndAnswersState extends State<QuestionAndAnswers> {
               ),
             ),
           ),
+          RoundedLoadingButton(
+            successIcon: Icons.check,
+            failedIcon: Icons.close,
+            child: Text('Tap me!', style: TextStyle(color: Colors.white)),
+            controller: _btnController1,
+            onPressed: () => _doSomething(_btnController1),
+          ),
           GradientButtonFb1(
               text: "Next",
               onPressed: () {
                 setState(() {
-                  questionNum++;
-                });
+                  if (questionNum + 1 < Question.questionBank.length) {
+                    if (userAnswer ==
+                        Question.questionBank[questionNum].options[
+                            Question.questionBank[questionNum].answer - 1]) {
+                      userScore++;
+                      print("Right answer ");
+                    } else {
+                      print("Wrong answer ");
+                    }
+                    questionNum++;
+                  } else {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => TestResult(
+                              testResult: userScore,
+                            )));
+                  }
 
-                print(questionNum);
+                  ResetCheckButton(_btnController1);
+                });
+                // print(" useranswer : $userAnswer");
+                // print(questionNum);
               })
         ],
       );

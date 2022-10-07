@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:main/Screens/level_test.dart';
+import 'package:main/Screens/test_result.dart';
 
 import 'Screens/Home.dart';
 import 'Screens/Tobics.dart';
@@ -9,7 +10,8 @@ void main() {
   runApp(MaterialApp(routes: {
     "Level": (context) => const Level(),
     "Home": (context) => Home(),
-    "Tobics": (context) => Tobics()
+    "Tobics": (context) => Tobics(),
+    "TestResult": (context) => TestResult()
   }, home: MyApp()));
 }
 
