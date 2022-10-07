@@ -5,6 +5,8 @@ import 'package:main/Models/Questions.dart';
 import 'package:main/Screens/Level%20Test/test_result.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
 import '../../Components/gradient_button_1.dart';
+import '../../bricks/Widgets Example/dialog_gradient.dart';
+import '../../bricks/Widgets Example/outline_button_1.dart';
 
 class LevelTest extends StatefulWidget {
   const LevelTest({super.key});
@@ -20,8 +22,9 @@ class _LevelTestState extends State<LevelTest> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 61, 105, 147),
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 30, 64, 97),
+        centerTitle: true,
         title: Text("Test"),
-        actions: [Text("$questionNum ")],
       ),
       body: Padding(
           padding: const EdgeInsets.all(8.0), child: QuestionAndAnswers()),
@@ -160,39 +163,63 @@ class _QuestionAndAnswersState extends State<QuestionAndAnswers> {
               ),
             ),
           ),
-          RoundedLoadingButton(
-            successIcon: Icons.check,
-            failedIcon: Icons.close,
-            child: Text('Tap me!', style: TextStyle(color: Colors.white)),
-            controller: _btnController1,
-            onPressed: () => _doSomething(_btnController1),
+          Container(
+            child: RoundedLoadingButton(
+              width: 200,
+              color: Color.fromARGB(255, 31, 70, 125),
+              successIcon: Icons.check,
+              failedIcon: Icons.close,
+              child: Text('Check Your answer',
+                  style: TextStyle(color: Color.fromARGB(255, 250, 250, 250))),
+              controller: _btnController1,
+              onPressed: () {
+                setState(() {
+                  print(userAnswer);
+                  if (userAnswer == "") {
+                    // Call this in a function
+                    showDialog<Dialog>(
+                        context: context,
+                        builder: (BuildContext context) => DialogFb3());
+                  } else {
+                    _doSomething(_btnController1);
+                  }
+                });
+              },
+            ),
           ),
-          GradientButtonFb1(
+          InvertedButtonFb2(
               text: "Next",
               onPressed: () {
                 setState(() {
-                  if (questionNum + 1 < Question.questionBank.length) {
-                    if (userAnswer ==
-                        Question.questionBank[questionNum].options[
-                            Question.questionBank[questionNum].answer - 1]) {
-                      userScore++;
-                      print("Right answer ");
+                  if (userAnswer != "") {
+                    if (questionNum + 1 < Question.questionBank.length) {
+                      if (userAnswer ==
+                          Question.questionBank[questionNum].options[
+                              Question.questionBank[questionNum].answer - 1]) {
+                        userScore++;
+                        print("Right answer ");
+                      } else {
+                        print("Wrong answer ");
+                      }
+                      questionNum++;
                     } else {
-                      print("Wrong answer ");
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => TestResult(
+                                testResult: userScore,
+                              )));
                     }
-                    questionNum++;
                   } else {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => TestResult(
-                              testResult: userScore,
-                            )));
+                    showDialog<Dialog>(
+                        context: context,
+                        builder: (BuildContext context) => DialogFb3());
                   }
 
+                  userAnswer = "";
                   ResetCheckButton(_btnController1);
                 });
                 print(" useranswer : $userAnswer");
                 print("Len Q : ${Question.questionBank.length}");
-              })
+              }),
         ],
       );
     }
