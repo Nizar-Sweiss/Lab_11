@@ -66,6 +66,7 @@ class _GrammerLesson1ScreenState extends State<GrammerLesson1Screen> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 61, 105, 147),
       appBar: AppBar(
+        automaticallyImplyLeading: true,
         title: Text(widget.title),
       ),
       body: ListView(
@@ -75,7 +76,7 @@ class _GrammerLesson1ScreenState extends State<GrammerLesson1Screen> {
             alignment: Alignment.center,
             child: Text(
               maxLines: 2,
-              "Listening English Lesson 1:\nFirst Snow Fall.",
+              "Listening English Lesson 1: First Snow Fall.",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,
@@ -188,7 +189,7 @@ class _GrammerLesson1ScreenState extends State<GrammerLesson1Screen> {
                 Container(
                   padding: EdgeInsets.all(10),
                   child: Text(
-                    "Today is November 26th.\n It snowed all day today. \nThe snow is beautiful.  \nThe snow finally stopped.  \nMy sister and I are excited.  \nMy Mom doesn't like the snow.  \nMy Mom has to shovel the drive way.  \nMy sister and I get to play.  \nI put on my hat and mittens.  \nMy Mom puts on my scarf.  \nMy Mom zippers my jacket.  \nMy sister puts on her hat and mittens.  \nMy Mom puts on her scarf.  \nMy Mom zippers her jacket.  \nMy sister and I go outside.  \nWe begin to make a snow man.  \nMy Mom starts to shovel the snow.  \nMy sister and I make snow angels.  \nMy sister and I throw snowballs.  \nIt starts to snow again.  \nWe go inside for hot chocolate.",
+                    "Today is November 26th.  It snowed all day today.  The snow is beautiful.   The snow finally stopped.   My sister and I are excited.   My Mom doesn't like the snow.   My Mom has to shovel the drive way.   My sister and I get to play.   I put on my hat and mittens.   My Mom puts on my scarf.   My Mom zippers my jacket.   My sister puts on her hat and mittens.   My Mom puts on her scarf.   My Mom zippers her jacket.   My sister and I go outside.   We begin to make a snow man.   My Mom starts to shovel the snow.   My sister and I make snow angels.   My sister and I throw snowballs.   It starts to snow again.   We go inside for hot chocolate.",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 )
