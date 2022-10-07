@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Lessons extends StatefulWidget {
-  const Lessons({super.key});
+class GrammerLessons extends StatefulWidget {
+  const GrammerLessons({super.key});
 
   @override
-  State<Lessons> createState() => _LessonsState();
+  State<GrammerLessons> createState() => _GrammerLessonsState();
 }
 
-class _LessonsState extends State<Lessons> {
+class _GrammerLessonsState extends State<GrammerLessons> {
   List subTitles = [
     "Adjectives",
     "Body Parts",
