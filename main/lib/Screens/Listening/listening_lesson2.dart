@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'dart:async';
 
+import 'package:lab011/Screens/Listening/listeningLessons.dart';
+
 class ListeningLesson2 extends StatelessWidget {
   const ListeningLesson2({super.key});
 
@@ -64,6 +66,11 @@ class _GrammerLesson2ScreenState extends State<GrammerLesson2Screen> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 61, 105, 147),
       appBar: AppBar(
+        leading: new IconButton(
+          icon: new Icon(Icons.arrow_back, color: Colors.orange),
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => ListeningLessons())),
+        ),
         title: Text(widget.title),
       ),
       body: ListView(

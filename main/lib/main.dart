@@ -16,12 +16,11 @@ import 'Screens/Level Test/level_test.dart';
 import 'Screens/Level Test/test_result.dart';
 import 'Screens/Tobics.dart';
 import 'Screens/levels.dart';
-import 'Screens/study.dart';
+
 import 'homepage.dart';
 
 void main() {
   runApp(MaterialApp(routes: {
-    "Level": (context) => const Level(),
     "Home": (context) => HomePage(),
     "Tobics": (context) => Tobics(),
     "Listening_Course": (context) => ListeningLessons(),

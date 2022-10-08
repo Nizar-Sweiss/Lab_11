@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'dart:async';
+import 'package:lab011/Screens/Listening/listeningLessons.dart';
+import 'package:lab011/Components/home_button.dart';
 
 class ListeningLesson1 extends StatelessWidget {
   const ListeningLesson1({super.key});
@@ -64,6 +66,11 @@ class _GrammerLesson1ScreenState extends State<GrammerLesson1Screen> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 61, 105, 147),
       appBar: AppBar(
+        leading: new IconButton(
+          icon: new Icon(Icons.arrow_back, color: Colors.orange),
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => ListeningLessons())),
+        ),
         automaticallyImplyLeading: true,
         title: Text(widget.title),
       ),

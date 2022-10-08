@@ -81,12 +81,11 @@ class _LoginPageState extends State<LoginPage> {
                         border: Border.all(color: Colors.white70),
                         borderRadius: BorderRadius.all(Radius.circular(5))),
                     height: 50,
-                    child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                            Color.fromARGB(255, 61, 105, 147),
-                          ),
-                        ),
+                    child: Container(
+                      width: 200,
+                      height: 50,
+                      color: Color.fromARGB(255, 22, 55, 85),
+                      child: MaterialButton(
                         onPressed: () {
                           if (valueofpassword.text == "bash" &&
                               valuofusername.text == "bash") {
@@ -95,11 +94,35 @@ class _LoginPageState extends State<LoginPage> {
                             ShowDailogWhenWrongPassorUser(context);
                           }
                         },
-                        child: Icon(
-                          Icons.check,
-                          size: 50,
-                          color: Colors.white54,
-                        )),
+                        child: Text(
+                          "Login",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+
+                    // ElevatedButton(
+                    //     style: ButtonStyle(
+                    //       backgroundColor: MaterialStateProperty.all(
+                    //         Color.fromARGB(255, 61, 105, 147),
+                    //       ),
+                    //     ),
+                    //     onPressed: () {
+                    //       if (valueofpassword.text == "bash" &&
+                    //           valuofusername.text == "bash") {
+                    //         Navigator.popAndPushNamed(context, "Home");
+                    //       } else {
+                    //         ShowDailogWhenWrongPassorUser(context);
+                    //       }
+                    //     },
+                    //     child: Icon(
+                    //       Icons.check,
+                    //       size: 50,
+                    //       color: Colors.white54,
+                    //     )),
                   ),
                   //end button Login
                   SizedBox(
