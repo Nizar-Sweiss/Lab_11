@@ -137,6 +137,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -170,6 +171,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.4"
+=======
+>>>>>>> parent of 5fa5079 (Mohammad's Screen added to the main project)
   matcher:
     dependency: transitive
     description:
@@ -198,6 +201,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.2"
+<<<<<<< HEAD
   path_provider:
     dependency: transitive
     description:
@@ -268,6 +272,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
+=======
+>>>>>>> parent of 5fa5079 (Mohammad's Screen added to the main project)
   rounded_loading_button:
     dependency: "direct main"
     description:
@@ -329,6 +335,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.12"
+<<<<<<< HEAD
   typed_data:
     dependency: transitive
     description:
@@ -399,6 +406,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.6"
+=======
+>>>>>>> parent of 5fa5079 (Mohammad's Screen added to the main project)
   vector_math:
     dependency: transitive
     description:
@@ -429,4 +438,7 @@ packages:
     version: "8.1.0"
 sdks:
   dart: ">=2.18.2 <3.0.0"
+<<<<<<< HEAD
   flutter: ">=3.0.0"
+=======
+>>>>>>> parent of 5fa5079 (Mohammad's Screen added to the main project)
