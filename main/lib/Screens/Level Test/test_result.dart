@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../bricks/Widgets Example/outline_button_1.dart';
 
 class TestResult extends StatelessWidget {
-  final testResult;
-  const TestResult({super.key, this.testResult});
+  final int testResult;
+  TestResult({required this.testResult});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class TestResult extends StatelessWidget {
             Container(
                 alignment: Alignment.center,
                 child: Text(
-                  "$testResult",
+                  "${testResult + 1}",
                   style: TextStyle(fontSize: 100, color: Colors.white),
                 )),
             Container(
@@ -42,7 +42,7 @@ class TestResult extends StatelessWidget {
                 child: InvertedButtonFb2(
                     text: "Done ",
                     onPressed: () {
-                      Navigator.popAndPushNamed(context, "Home");
+                      Navigator.popAndPushNamed(context, "Tobics");
                     }))
           ],
         ),

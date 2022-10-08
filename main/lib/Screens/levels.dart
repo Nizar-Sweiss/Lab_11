@@ -16,18 +16,18 @@ class _LevelState extends State<Level> {
       backgroundColor: Color.fromARGB(255, 61, 105, 147),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 61, 105, 147),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+        title: Row(mainAxisAlignment:MainAxisAlignment.spaceBetween,
+         
           children: [
             IconButton(
                 onPressed: () {
-                  Navigator.popAndPushNamed(context, "Home");
+                  Navigator.popAndPushNamed(context, "study");
                 },
                 icon: Icon(Icons.arrow_back)),
             Text("LEVELS"),
-            SizedBox(
-              width: 193,
-            ),
+            // SizedBox(
+            //   width: 193,
+            // ),
             IconButton(
                 onPressed: () {
                   // edit the home
@@ -39,11 +39,11 @@ class _LevelState extends State<Level> {
       ),
       body: Wrap(
         children: [
-          LevelW(number: "1"),
-          LevelW(number: "2"),
+          LevelW(number: "1",q: "q1",),
+          LevelW(number: "2",isloked: true,),
           LevelW(
-            number: "3",
-            isloked: true,
+            number: "3",isloked: true,
+           
           ),
           LevelW(
             number: "4",

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:lab011/Components/Take_Quiz.dart';
 
-class Lesson2 extends StatefulWidget {
-  const Lesson2({super.key});
+class Grammar_Lesson2 extends StatefulWidget {
+  const Grammar_Lesson2({super.key});
 
   @override
-  State<Lesson2> createState() => _Lesson2State();
+  State<Grammar_Lesson2> createState() => _Grammar_Lesson2State();
 }
 
-class _Lesson2State extends State<Lesson2> {
+class _Grammar_Lesson2State extends State<Grammar_Lesson2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,10 +36,7 @@ class _Lesson2State extends State<Lesson2> {
             SizedBox(
               height: 15,
             ),
-            Image.asset(
-              "images/external.PNG",
-              fit: BoxFit.cover,
-            ),
+            Image(image: AssetImage("images/external.png")),
             SizedBox(
               height: 30,
             ),
@@ -54,12 +52,13 @@ class _Lesson2State extends State<Lesson2> {
               height: 15,
             ),
             Image.asset(
-              "images/internal.PNG",
+              "images/internal.png",
               fit: BoxFit.cover,
             ),
             SizedBox(
               height: 20,
-            )
+            ),
+            TakeQuiz()
           ],
         ),
       ),

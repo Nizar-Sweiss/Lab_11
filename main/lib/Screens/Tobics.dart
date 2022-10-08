@@ -12,6 +12,7 @@ class Tobics extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 61, 105, 147),
           title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
                   onPressed: () {
@@ -19,9 +20,9 @@ class Tobics extends StatelessWidget {
                   },
                   icon: Icon(Icons.arrow_back)),
               Text("LEVELS"),
-              SizedBox(
-                width: 193,
-              ),
+              // SizedBox(
+              //   width: 193,
+              // ),
               IconButton(
                   onPressed: () {
                     // edit the home
@@ -38,7 +39,7 @@ class Tobics extends StatelessWidget {
               border: Border.all(color: Colors.white)),
           width: 300,
           height: 600,
-          child: Row(
+          child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -48,34 +49,55 @@ class Tobics extends StatelessWidget {
                     Tobicsw(
                       title: "learn grammer",
                       imageurl: "images/1.webp",
+                      myRout: 'Grammar_Course',
                     ),
                     Tobicsw(
                       title: "listening course",
                       imageurl: "images/2.webp",
+                      myRout: 'Listening_Course',
                     ),
                     Tobicsw(
-                      title: "reading corse",
+                      title: "Vocabulary Course ",
                       imageurl: "images/3.jpg",
+                      myRout: 'Vocabulary_Course',
                     )
                   ],
                 ),
               ),
-              SizedBox(
-                width: 60,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Tobicsw(title: "writing corse", imageurl: "images/4.png"),
-                    Tobicsw(title: "speaking corse", imageurl: "images/5.jpg"),
-                    Tobicsw(title: "need help", imageurl: "images/6.jpg")
-                  ],
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.popAndPushNamed(context, "Quizes");
+                },
+                icon: Icon(Icons.start),
+                label: Text("Test yourself "),
+                style: ElevatedButton.styleFrom(
+                  shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(30),
+                  ),
+                  backgroundColor: Color.fromARGB(255, 35, 86, 133),
                 ),
               )
             ],
           ),
+
+          // Padding(
+          //   padding: const EdgeInsets.all(8.0),
+          //   child: Column(
+          //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //     children: [
+          //       Tobicsw(
+          //         title: "writing corse",
+          //         imageurl: "images/4.png",
+          //         myRout: '',
+          //       ),
+          //       Tobicsw(
+          //         title: "speaking corse",
+          //         imageurl: "images/5.jpg",
+          //         myRout: '',
+          //       ),
+          //     ],
+          //   ),
+          // )
         )));
   }
 }

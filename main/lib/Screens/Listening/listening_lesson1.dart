@@ -1,11 +1,9 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'dart:async';
 
-class GrammerLesson1 extends StatelessWidget {
-  const GrammerLesson1({super.key});
+class ListeningLesson1 extends StatelessWidget {
+  const ListeningLesson1({super.key});
 
   @override
   Widget build(BuildContext context) {

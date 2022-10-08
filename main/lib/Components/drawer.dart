@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../screens/homepage.dart';
+import '../homepage.dart';
+
 import '../screens/loginpage.dart';
 
 class MyDrawer extends StatefulWidget {
@@ -159,12 +160,9 @@ class _MyDrawerState extends State<MyDrawer> {
                   return HomePage();
                 }));
               });
-              setState(() {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
-                  return LoginPage();
-                }));
-              });
+             
+            Navigator.popAndPushNamed(context, "loginpage"); 
+              
             },
             child: Row(
               children: [

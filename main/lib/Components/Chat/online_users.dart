@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:main/Models/OnlineUserModel.dart';
+
+
+import '../../Models/OnlineUserModel.dart';
 
 Widget OnlineUser(OnlineUserModel user) => Row(
       children: [

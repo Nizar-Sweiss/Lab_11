@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:main/Components/showdailog.dart';
-import 'package:main/Screens/homepage.dart';
+import 'package:lab011/Screens/showdailog.dart';
+import '../homepage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -88,11 +88,8 @@ class _LoginPageState extends State<LoginPage> {
                         onPressed: () {
                           if (valueofpassword.text == "bash" &&
                               valuofusername.text == "bash") {
-                            Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) {
-                              return HomePage();
-                            }));
-                          } else {
+                         Navigator.popAndPushNamed(context, "Home");
+                          }else {
                             ShowDailogWhenWrongPassorUser(context);
                           }
                         },

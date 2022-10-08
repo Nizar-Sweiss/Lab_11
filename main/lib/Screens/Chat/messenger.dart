@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:main/Components/Chat/online_users.dart';
-import 'package:main/Components/Chat/user_messeges.dart';
 
+
+
+import '../../Components/Chat/online_users.dart';
+import '../../Components/Chat/user_messeges.dart';
 import '../../Components/clean_rounded_search_bar.dart';
 import '../../Models/OnlineUserModel.dart';
 
@@ -73,7 +75,9 @@ class _MessengerScreenState extends State<MessengerScreen> {
                     color: Colors.black,
                     size: 16,
                   ),
-                )),
+                )),IconButton(onPressed: () {
+                  Navigator.popAndPushNamed(context, "Home");
+                }, icon: Icon(Icons.home))
           ],
         ),
         body: Padding(

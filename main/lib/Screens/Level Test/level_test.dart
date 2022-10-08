@@ -1,10 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:main/Models/Questions.dart';
-import 'package:main/Screens/Level%20Test/test_result.dart';
+import 'package:lab011/Screens/Level%20Test/test_result.dart';
+
 import 'package:rounded_loading_button/rounded_loading_button.dart';
+
 import '../../Components/gradient_button_1.dart';
+import '../../Models/Questions.dart';
 import '../../bricks/Widgets Example/dialog_gradient.dart';
 import '../../bricks/Widgets Example/outline_button_1.dart';
 
@@ -22,9 +24,27 @@ class _LevelTestState extends State<LevelTest> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 61, 105, 147),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 30, 64, 97),
-        centerTitle: true,
-        title: Text("Test"),
+        backgroundColor: Color.fromARGB(255, 61, 105, 147),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+                onPressed: () {
+                  Navigator.popAndPushNamed(context, "Level");
+                },
+                icon: Icon(Icons.arrow_back)),
+            Text("test"),
+            // SizedBox(
+            //   width: 200,
+            // ),
+            IconButton(
+                onPressed: () {
+                  // edit the home
+                  Navigator.popAndPushNamed(context, "Home");
+                },
+                icon: Icon(Icons.home)),
+          ],
+        ),
       ),
       body: Padding(
           padding: const EdgeInsets.all(8.0), child: QuestionAndAnswers()),
@@ -45,22 +65,45 @@ class QuestionAndAnswers extends StatefulWidget {
 class _QuestionAndAnswersState extends State<QuestionAndAnswers> {
   String userAnswer = "";
   Question Q1 = Question(
-      id: 1, question: " Q 1 ", answer: 1, options: ["O1 ", "O2", " O3", "O4"]);
+      id: 1,
+      question: " My father hates ________ a tie to work.",
+      answer: 3,
+      options: [
+        "to wear ",
+        "wearing",
+        "  to wear/wearing",
+        "not from the listed answers"
+      ]);
   Question Q2 = Question(
       id: 1,
-      question: " Q 2 ",
-      answer: 2,
-      options: ["O12 ", "O22", " O32", "O42"]);
+      question: " We like ________ our grandmother on Sundays ",
+      answer: 3,
+      options: [
+        "to visit ",
+        "visiting",
+        " to visit/visiting",
+        "not from the listed answers"
+      ]);
   Question Q3 = Question(
       id: 1,
-      question: " Q 3 ",
-      answer: 3,
-      options: ["O13 ", "O23", " O33", "O43"]);
+      question: " I might want ________ some money soon. ",
+      answer: 1,
+      options: [
+        "to borrow ",
+        "borrowing",
+        " to borrow/borrowing",
+        "not from the listed answers"
+      ]);
   Question Q4 = Question(
       id: 1,
-      question: " Q 4 ",
-      answer: 4,
-      options: ["O14 ", "O24", " O34", "O44"]);
+      question: " We can't afford ________ a vacation this summer. ",
+      answer: 1,
+      options: [
+        " to take",
+        "taking",
+        " to take/taking",
+        "not from the listed answers"
+      ]);
 
   ///Check button
   static final RoundedLoadingButtonController _btnController1 =
@@ -203,10 +246,12 @@ class _QuestionAndAnswersState extends State<QuestionAndAnswers> {
                       }
                       questionNum++;
                     } else {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => TestResult(
-                                testResult: userScore,
-                              )));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TestResult(
+                                    testResult: userScore,
+                                  )));
                     }
                   } else {
                     showDialog<Dialog>(

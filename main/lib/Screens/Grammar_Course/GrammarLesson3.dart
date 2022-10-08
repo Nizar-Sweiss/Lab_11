@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:lab011/Components/Take_Quiz.dart';
+
 import 'package:url_launcher/url_launcher.dart';
 
 final Uri _url = Uri.parse('https://flutter.dev');
 
-class Lesson3 extends StatefulWidget {
-  const Lesson3({super.key});
+class Grammar_Lesson3 extends StatefulWidget {
+  const Grammar_Lesson3({super.key});
 
   @override
-  State<Lesson3> createState() => _Lesson3State();
+  State<Grammar_Lesson3> createState() => _Grammar_Lesson3State();
 }
 
-class _Lesson3State extends State<Lesson3> {
+class _Grammar_Lesson3State extends State<Grammar_Lesson3> {
   Future<void> _launchUrl() async {
     if (!await launchUrl(_url)) {
       throw 'Could not launch $_url';
@@ -45,13 +47,18 @@ class _Lesson3State extends State<Lesson3> {
               height: 100,
             ),
             ElevatedButton.icon(
-                onPressed: () {
-                  setState(() {
-                    _launchUrl;
-                  });
-                },
-                icon: Icon(Icons.youtube_searched_for),
-                label: Text("Watch Now"))
+              onPressed: () {
+                setState(() {
+                  _launchUrl;
+                });
+              },
+              icon: Icon(Icons.youtube_searched_for),
+              label: Text("Watch Now"),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            TakeQuiz()
           ],
         ),
       ),

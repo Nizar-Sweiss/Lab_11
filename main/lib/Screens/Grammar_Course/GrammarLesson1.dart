@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:main/Components/lesson1Para.dart';
+import 'package:lab011/Components/Take_Quiz.dart';
+import 'package:lab011/Components/lesson1Para.dart';
 
-class Lesson1 extends StatefulWidget {
-  const Lesson1({super.key});
+class Grammar_Lesson1 extends StatefulWidget {
+  const Grammar_Lesson1({super.key});
 
   @override
-  State<Lesson1> createState() => _Lesson1State();
+  State<Grammar_Lesson1> createState() => _Grammar_Lesson1State();
 }
 
-class _Lesson1State extends State<Lesson1> {
+class _Grammar_Lesson1State extends State<Grammar_Lesson1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +53,8 @@ class _Lesson1State extends State<Lesson1> {
                       'Descriptive adjectives are the most common adjectives. We use them to describe nouns.\n'
                       'Interrogative adjectives are words such as what, which, and whose that modify nouns. We use an interrogative adjective with a noun to ask a question.\n'
                       'Indefinite adjectives are words like all, any, each, few, many, much, most, several, and some that describe nouns in a general or non-specific manner.\n'
-                      'Possessive adjectives modify nouns or noun phrases and are words such as my, your, his, her, its, our, and their which we use before nouns to show possession.\n')
+                      'Possessive adjectives modify nouns or noun phrases and are words such as my, your, his, her, its, our, and their which we use before nouns to show possession.\n'),
+              TakeQuiz()
             ],
           )),
     );
