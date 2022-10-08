@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../Components/TobicsWidget.dart';
+import '../Components/home_button.dart';
 
 class Tobics extends StatelessWidget {
   const Tobics({super.key});
@@ -15,11 +16,7 @@ class Tobics extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              IconButton(
-                  onPressed: () {
-                    Navigator.popAndPushNamed(context, "Home");
-                  },
-                  icon: Icon(Icons.arrow_back)),
+              HomeButton(context),
               Text("Topics"),
               // SizedBox(
               //   width: 193,

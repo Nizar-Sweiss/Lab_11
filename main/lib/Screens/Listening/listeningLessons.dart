@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:lab011/Components/LessonsList.dart';
 
+import '../../Components/home_button.dart';
+
 class ListeningLessons extends StatefulWidget {
   const ListeningLessons({super.key});
 
@@ -22,7 +24,9 @@ class _ListeningLessonsState extends State<ListeningLessons> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [Icon(Icons.home)],
+        actions: [
+          HomeButton(context),
+        ],
         title: Text("Lessons"),
         backgroundColor: Color.fromARGB(255, 61, 105, 147),
       ),
