@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lab011/Components/LessonsList.dart';
 
+import '../../Components/home_button.dart';
+
 class VocabularyLessons extends StatefulWidget {
   const VocabularyLessons({super.key});
 
@@ -39,7 +41,9 @@ class _VocabularyLessonsState extends State<VocabularyLessons> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.home))],
+        actions: [
+          HomeButton(context),
+        ],
         title: Text("Lessons"),
         backgroundColor: Color.fromARGB(255, 61, 105, 147),
       ),

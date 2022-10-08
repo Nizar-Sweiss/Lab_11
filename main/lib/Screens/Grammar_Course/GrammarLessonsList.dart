@@ -3,6 +3,8 @@ import 'package:lab011/Components/LessonsList.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../Components/home_button.dart';
+
 class GrammarLessons extends StatefulWidget {
   const GrammarLessons({super.key});
 
@@ -41,7 +43,9 @@ class _GrammarLessonsState extends State<GrammarLessons> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.home))],
+        actions: [
+          HomeButton(context),
+        ],
         title: Text("Lessons"),
         backgroundColor: Color.fromARGB(255, 61, 105, 147),
       ),

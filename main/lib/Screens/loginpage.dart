@@ -26,9 +26,11 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Container(
                     child: CircleAvatar(
-                      radius: 60,
-                      foregroundImage: NetworkImage(
-                          "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/39/2f/26/392f26e5-30c6-593c-9619-a7acde1cfb85/AppIcon-1x_U007emarketing-0-5-0-85-220.png/1200x600wa.png"),
+                      child: ClipRRect(
+                        child: Image.asset("images/LoginLogo.png"),
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      radius: 90,
                     ),
                   ),
                   SizedBox(
@@ -88,8 +90,8 @@ class _LoginPageState extends State<LoginPage> {
                         onPressed: () {
                           if (valueofpassword.text == "bash" &&
                               valuofusername.text == "bash") {
-                         Navigator.popAndPushNamed(context, "Home");
-                          }else {
+                            Navigator.popAndPushNamed(context, "Home");
+                          } else {
                             ShowDailogWhenWrongPassorUser(context);
                           }
                         },
