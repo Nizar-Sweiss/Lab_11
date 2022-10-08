@@ -47,18 +47,18 @@ class Tobics extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Tobicsw(
-                      title: "learn grammer",
-                      imageurl: "images/1.webp",
+                      title: "Grammer Course",
+                      imageUrl: "images/1.webp",
                       myRout: 'Grammar_Course',
                     ),
                     Tobicsw(
-                      title: "listening course",
-                      imageurl: "images/2.webp",
+                      title: "Listening Course",
+                      imageUrl: "images/2.webp",
                       myRout: 'Listening_Course',
                     ),
                     Tobicsw(
                       title: "Vocabulary Course ",
-                      imageurl: "images/3.jpg",
+                      imageUrl: "images/3.jpg",
                       myRout: 'Vocabulary_Course',
                     )
                   ],
