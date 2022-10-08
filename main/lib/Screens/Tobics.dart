@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../Components/TobicsWidget.dart';
 
@@ -40,6 +41,7 @@ class Tobics extends StatelessWidget {
           width: 300,
           height: 600,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -48,33 +50,46 @@ class Tobics extends StatelessWidget {
                   children: [
                     Tobicsw(
                       title: "Grammer Course",
-                      imageUrl: "images/1.webp",
                       myRout: 'Grammar_Course',
+                      topicIcon: FaIcon(
+                        FontAwesomeIcons.spellCheck,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                      ),
                     ),
                     Tobicsw(
                       title: "Listening Course",
-                      imageUrl: "images/2.webp",
+                      topicIcon: FaIcon(
+                        FontAwesomeIcons.headphones,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                      ),
                       myRout: 'Listening_Course',
                     ),
                     Tobicsw(
                       title: "Vocabulary Course ",
-                      imageUrl: "images/3.jpg",
+                      topicIcon: FaIcon(
+                        FontAwesomeIcons.v,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                      ),
                       myRout: 'Vocabulary_Course',
                     )
                   ],
                 ),
               ),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.popAndPushNamed(context, "Quizes");
-                },
-                icon: Icon(Icons.start),
-                label: Text("Test yourself "),
-                style: ElevatedButton.styleFrom(
-                  shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(30),
+              Container(
+                padding: EdgeInsets.only(bottom: 30),
+                alignment: Alignment.bottomCenter,
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.popAndPushNamed(context, "Quizes");
+                  },
+                  icon: Icon(Icons.start),
+                  label: Text("Test yourself "),
+                  style: ElevatedButton.styleFrom(
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(30),
+                    ),
+                    backgroundColor: Color.fromARGB(255, 35, 86, 133),
                   ),
-                  backgroundColor: Color.fromARGB(255, 35, 86, 133),
                 ),
               )
             ],
