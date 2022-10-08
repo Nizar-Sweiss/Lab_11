@@ -3,11 +3,8 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-<<<<<<< HEAD
   audioplayers_linux
   url_launcher_linux
-=======
->>>>>>> parent of 5fa5079 (Mohammad's Screen added to the main project)
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
