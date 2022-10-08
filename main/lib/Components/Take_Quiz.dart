@@ -11,7 +11,9 @@ class _TakeQuizState extends State<TakeQuiz> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.popAndPushNamed(context, "Quizes");
+      },
       icon: Icon(Icons.start),
       label: Text("Take a quiz !"),
       style: ElevatedButton.styleFrom(

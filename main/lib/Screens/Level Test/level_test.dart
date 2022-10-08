@@ -30,7 +30,7 @@ class _LevelTestState extends State<LevelTest> {
           children: [
             IconButton(
                 onPressed: () {
-                  Navigator.popAndPushNamed(context, "Level");
+                  Navigator.popAndPushNamed(context, "Tobics");
                 },
                 icon: Icon(Icons.arrow_back)),
             Text("test"),

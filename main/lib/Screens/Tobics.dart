@@ -20,7 +20,7 @@ class Tobics extends StatelessWidget {
                     Navigator.popAndPushNamed(context, "Home");
                   },
                   icon: Icon(Icons.arrow_back)),
-              Text("LEVELS"),
+              Text("Topics"),
               // SizedBox(
               //   width: 193,
               // ),
