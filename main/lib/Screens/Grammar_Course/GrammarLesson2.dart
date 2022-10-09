@@ -28,7 +28,10 @@ class _Grammar_Lesson2State extends State<Grammar_Lesson2> {
             Text(
               "External Organs",
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
             ),
             Divider(
               color: Colors.white,
@@ -36,14 +39,22 @@ class _Grammar_Lesson2State extends State<Grammar_Lesson2> {
             SizedBox(
               height: 15,
             ),
-            Image(image: AssetImage("images/external.png")),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Image(
+                image: AssetImage("images/external.PNG"),
+              ),
+            ),
             SizedBox(
               height: 30,
             ),
             Text(
               "Internal Organs",
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
             ),
             Divider(
               color: Colors.white,
@@ -51,9 +62,11 @@ class _Grammar_Lesson2State extends State<Grammar_Lesson2> {
             SizedBox(
               height: 15,
             ),
-            Image.asset(
-              "images/internal.png",
-              fit: BoxFit.cover,
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Image(
+                image: AssetImage("images/internal.PNG"),
+              ),
             ),
             SizedBox(
               height: 20,
