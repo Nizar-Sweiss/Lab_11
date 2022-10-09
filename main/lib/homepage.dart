@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
           //this class in components
           MyDrawer(),
       body: Container(
+        width: double.infinity,
         margin: EdgeInsets.only(left: 30, right: 30, top: 20),
         child: ListView(children: [
           CircleAvatar(
@@ -43,13 +44,16 @@ class _HomePageState extends State<HomePage> {
             height: 20,
           ),
           Container(
-            padding: EdgeInsets.all(12),
+            padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
                 color: Color.fromARGB(255, 28, 59, 88),
                 border: Border.all(color: Colors.white70),
                 borderRadius: BorderRadius.all(Radius.circular(5))),
             child: Row(
               children: [
+                SizedBox(
+                  width: 20,
+                ),
                 Column(
                   children: [
                     GestureDetector(
@@ -74,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 SizedBox(
-                  width: 60,
+                  width: 30,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -105,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 SizedBox(
-                  width: 60,
+                  width: 30,
                 ),
                 GestureDetector(
                   onTap: () {
