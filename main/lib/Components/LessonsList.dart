@@ -18,12 +18,18 @@ class _LessonsListState extends State<LessonsList> {
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
           onTap: () {
-         
-              Navigator.pushNamed(context, "${widget.lessonsRoutes![index]}");
-           
+            Navigator.pushNamed(context, "${widget.lessonsRoutes![index]}");
           },
           child: Container(
             decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
+                  spreadRadius: 2,
+                  blurRadius: 7,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+              ],
               color: Color.fromARGB(255, 35, 86, 133),
               border: Border.all(
                 width: 1,

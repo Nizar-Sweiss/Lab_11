@@ -23,12 +23,12 @@ class _LevelTestState extends State<LevelTest> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 61, 105, 147),
-      appBar: AppBar(automaticallyImplyLeading: false,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 61, 105, 147),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-          
             Text("test"),
             // SizedBox(
             //   width: 200,
@@ -221,7 +221,7 @@ class _QuestionAndAnswersState extends State<QuestionAndAnswers> {
                         context: context,
                         builder: (BuildContext context) => DialogFb3());
                   } else {
-                    _doSomething(_btnController1);
+                    //_doSomething(_btnController1);
                   }
                 });
               },

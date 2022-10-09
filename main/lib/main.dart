@@ -20,23 +20,29 @@ import 'Screens/levels.dart';
 import 'homepage.dart';
 
 void main() {
-  runApp(MaterialApp(routes: {
-    "Home": (context) => HomePage(),
-    "Tobics": (context) => Tobics(),
-    "Listening_Course": (context) => ListeningLessons(),
-    "Listening_Lesson1": (context) => GrammerLesson1Screen(title: "Lesson Screen"),
-    "Listening_Lesson2": (context) => GrammerLesson2Screen(title: "Lesson Screen",),
-    "Grammar_Course": (context) => GrammarLessons(),
-    "Grammar_Lesson1": (context) => Grammar_Lesson1(),
-    "Grammar_Lesson2": (context) => Grammar_Lesson2(),
-    "Grammar_Lesson3": (context) => Grammar_Lesson3(),
-    "Vocabulary_Course": (context) => VocabularyLessons(),
-    "Vocabulary_Lesson_1": (context) => Vocabulary_Lesson1(),
-    "Vocabulary_Lesson_2": (context) => Vocabulary_Lesson2(),
-    "loginpage": (context) => LoginPage(),
-    "Quizes": (context) => LevelTest(),
-    "massenger": (context) => MessengerScreen()
-  }, home: MyApp()));
+  runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
+      routes: {
+        "Home": (context) => HomePage(),
+        "Tobics": (context) => Tobics(),
+        "Listening_Course": (context) => ListeningLessons(),
+        "Listening_Lesson1": (context) =>
+            GrammerLesson1Screen(title: "Lesson Screen"),
+        "Listening_Lesson2": (context) => GrammerLesson2Screen(
+              title: "Lesson Screen",
+            ),
+        "Grammar_Course": (context) => GrammarLessons(),
+        "Grammar_Lesson1": (context) => Grammar_Lesson1(),
+        "Grammar_Lesson2": (context) => Grammar_Lesson2(),
+        "Grammar_Lesson3": (context) => Grammar_Lesson3(),
+        "Vocabulary_Course": (context) => VocabularyLessons(),
+        "Vocabulary_Lesson_1": (context) => Vocabulary_Lesson1(),
+        "Vocabulary_Lesson_2": (context) => Vocabulary_Lesson2(),
+        "loginpage": (context) => LoginPage(),
+        "Quizes": (context) => LevelTest(),
+        "massenger": (context) => MessengerScreen()
+      },
+      home: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 import 'Components/drawer.dart';
 
@@ -27,16 +28,16 @@ class _HomePageState extends State<HomePage> {
         margin: EdgeInsets.only(left: 30, right: 30, top: 20),
         child: ListView(children: [
           CircleAvatar(
-            radius: 50,
-            foregroundImage: NetworkImage(
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmBYZyIHeO76dzASleF3GYpvC9rXdFQ_hO4raakU2Ge9v89ag6ThrHwWgTDtlWb4663Rs&usqp=CAU"),
+            child: Lottie.asset('images/pfp.json'),
+            backgroundColor: Color.fromARGB(81, 255, 255, 255),
+            radius: 90,
           ),
           SizedBox(
             height: 10,
           ),
           Center(
             child: Text(
-              "Bashar-qawasmi",
+              "Alex O'Brian",
               style: GoogleFonts.acme(color: Colors.white, fontSize: 25),
             ),
           ),
@@ -50,10 +51,8 @@ class _HomePageState extends State<HomePage> {
                 border: Border.all(color: Colors.white70),
                 borderRadius: BorderRadius.all(Radius.circular(5))),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(
-                  width: 20,
-                ),
                 Column(
                   children: [
                     GestureDetector(
@@ -61,10 +60,9 @@ class _HomePageState extends State<HomePage> {
                         Navigator.pushNamed(context, "Tobics");
                       },
                       child: CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 30,
-                        foregroundImage: NetworkImage(
-                            "https://thumbs.dreamstime.com/b/case-study-cdr-185723046.jpg"),
+                        child: Lottie.asset('images/Study.json'),
+                        backgroundColor: Color.fromARGB(0, 255, 255, 255),
+                        radius: 40,
                       ),
                     ),
                     SizedBox(
@@ -92,16 +90,15 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 30,
-                        foregroundImage: NetworkImage(
-                            "https://cdn-icons-png.flaticon.com/512/2701/2701190.png"),
+                        child: Lottie.asset('images/Review.json'),
+                        backgroundColor: Color.fromARGB(0, 255, 255, 255),
+                        radius: 44,
                       ),
                       SizedBox(
                         height: 10,
                       ),
                       Text(
-                        "rivew",
+                        "Review",
                         style:
                             GoogleFonts.acme(color: Colors.white, fontSize: 25),
                       )
@@ -118,15 +115,15 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       CircleAvatar(
-                        radius: 30,
-                        foregroundImage: NetworkImage(
-                            "https://static.vecteezy.com/system/resources/previews/004/879/666/original/chat-message-icon-on-a-white-background-free-vector.jpg"),
+                        child: Lottie.asset('images/Chat.json'),
+                        backgroundColor: Color.fromARGB(0, 41, 34, 34),
+                        radius: 40,
                       ),
                       SizedBox(
                         height: 10,
                       ),
                       Text(
-                        "chat",
+                        "Chat",
                         style:
                             GoogleFonts.acme(color: Colors.white, fontSize: 25),
                       )

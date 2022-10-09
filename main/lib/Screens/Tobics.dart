@@ -22,9 +22,12 @@ class Tobics extends StatelessWidget {
         body: Center(
             child: Container(
           decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(
+                      7.0) //                 <--- border radius here
+                  ),
               color: Color.fromARGB(255, 65, 110, 150),
               border: Border.all(color: Colors.white)),
-          width: 300,
+          width: 350,
           height: 600,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -36,40 +36,65 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     height: 40,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                        border:
-                            Border(bottom: BorderSide(color: Colors.white))),
-                    child: TextFormField(style: TextStyle(color: Colors.white),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      //To take the input when it login
                       controller: valuofusername,
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.person,
-                          color: Colors.white54,
-                        ),
-                        hintStyle: TextStyle(color: Colors.white54),
-                        hintText: 'email',
-                      ),
+
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                width: 1,
+                                color: Color.fromARGB(255, 255, 255, 255)),
+                          ),
+                          labelText: "Your Email or UserName ",
+                          labelStyle: TextStyle(
+                              color: Color.fromARGB(213, 175, 175, 175)),
+                          border: OutlineInputBorder(),
+                          prefixIcon: Icon(
+                            Icons.email,
+                            color: Colors.white,
+                          ),
+                          hoverColor: Color.fromARGB(255, 255, 255, 255)),
+                      keyboardType: TextInputType.emailAddress,
+                      onFieldSubmitted: (emailFeild) {},
                     ),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                        border:
-                            Border(bottom: BorderSide(color: Colors.white))),
-                    child: TextFormField(style: TextStyle(color: Colors.white),
-                      obscureText: true,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      //To take the input when it login
                       controller: valueofpassword,
-                      decoration: const InputDecoration(
-                        // border: UnderlineInputBorder(),
-                        
-                        hintStyle: TextStyle(color: Colors.white54),
-                        hintText: 'Password',
-                        prefixIcon: Icon(
-                          Icons.lock,
-                          color: Colors.white54,
-                        ),
-                        suffix: Icon(Icons.remove_red_eye),
-                      ),
+                      obscureText: true,
+                      keyboardType: TextInputType.visiblePassword,
+                      style: TextStyle(color: Colors.white),
+
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                width: 1,
+                                color: Color.fromARGB(255, 255, 255, 255)),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(width: 3, color: Colors.amberAccent),
+                          ),
+                          labelText: "Password ",
+                          labelStyle: TextStyle(
+                              color: Color.fromARGB(213, 153, 153, 153)),
+                          border: OutlineInputBorder(),
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            color: Colors.white,
+                          ),
+                          suffixIcon: Icon(
+                            Icons.remove_red_eye,
+                            color: Colors.white,
+                          ),
+                          hoverColor: Color.fromARGB(255, 255, 255, 255)),
+                      onFieldSubmitted: (emailFeild) {},
                     ),
                   ),
 

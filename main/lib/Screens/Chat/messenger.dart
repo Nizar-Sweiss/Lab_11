@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 import '../../Components/Chat/online_users.dart';
 import '../../Components/Chat/user_messeges.dart';
 import '../../Components/clean_rounded_search_bar.dart';
@@ -16,17 +14,29 @@ class MessengerScreen extends StatefulWidget {
 
 List<OnlineUserModel> users = [
   OnlineUserModel(
-      userMessege: 'Say hi', userName: 'Test1', userPFP: "images/pfpPic.jpg"),
+      userMessege:
+          '"All your life, you will be faced with a choice. You can choose love or hate…I choose love." — Johnny Cash',
+      userName: 'Test1',
+      userPFP: "images/pfpchat.png"),
   OnlineUserModel(
-      userMessege: 'Say hi', userName: 'Test2', userPFP: "images/pfpPic.jpg"),
+      userMessege:
+          'I believe we are here on the planet Earth to live, grow up and do what we can to make this world a better place for all people to enjoy freedom." — Rosa Parks',
+      userName: 'Test2',
+      userPFP: "images/pfpPic.jpg"),
   OnlineUserModel(
-      userMessege: 'Say hi', userName: 'Test3', userPFP: "images/pfpPic.jpg"),
+      userMessege: 'Say hi', userName: 'Test3', userPFP: "images/pfpchat.png"),
   OnlineUserModel(
-      userMessege: 'Say hi', userName: 'Test4', userPFP: "images/pfpPic.jpg"),
+      userMessege:
+          'Helle there .. how are you ? hope you doing amazing . so i want to talk to you about ',
+      userName: 'Test4',
+      userPFP: "images/pfpPic.jpg"),
   OnlineUserModel(
       userMessege: 'Say hi', userName: 'Test5', userPFP: "images/pfpPic.jpg"),
   OnlineUserModel(
-      userMessege: 'Say hi', userName: 'Test6', userPFP: "images/pfpPic.jpg"),
+      userMessege:
+          'All you need in this life is ignorance and confidence; then success is sure." — Mark Twain',
+      userName: 'Test6',
+      userPFP: "images/pfpchat.png"),
   OnlineUserModel(
       userMessege: 'Say hi', userName: 'Test7', userPFP: "images/pfpPic.jpg"),
 ];
@@ -75,9 +85,12 @@ class _MessengerScreenState extends State<MessengerScreen> {
                     color: Colors.black,
                     size: 16,
                   ),
-                )),IconButton(onPressed: () {
+                )),
+            IconButton(
+                onPressed: () {
                   Navigator.popAndPushNamed(context, "Home");
-                }, icon: Icon(Icons.home))
+                },
+                icon: Icon(Icons.home))
           ],
         ),
         body: Padding(
