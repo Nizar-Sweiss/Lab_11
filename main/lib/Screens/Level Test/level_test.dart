@@ -23,16 +23,12 @@ class _LevelTestState extends State<LevelTest> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 61, 105, 147),
-      appBar: AppBar(
+      appBar: AppBar(automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 61, 105, 147),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            IconButton(
-                onPressed: () {
-                  Navigator.popAndPushNamed(context, "Tobics");
-                },
-                icon: Icon(Icons.arrow_back)),
+          
             Text("test"),
             // SizedBox(
             //   width: 200,

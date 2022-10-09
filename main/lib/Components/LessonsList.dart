@@ -18,9 +18,9 @@ class _LessonsListState extends State<LessonsList> {
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
           onTap: () {
-            setState(() {
+         
               Navigator.pushNamed(context, "${widget.lessonsRoutes![index]}");
-            });
+           
           },
           child: Container(
             decoration: BoxDecoration(

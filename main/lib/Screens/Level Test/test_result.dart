@@ -33,7 +33,7 @@ class TestResult extends StatelessWidget {
             Container(
                 alignment: Alignment.center,
                 child: Text(
-                  "${testResult + 1}",
+                  "${testResult }",
                   style: TextStyle(fontSize: 100, color: Colors.white),
                 )),
             Container(

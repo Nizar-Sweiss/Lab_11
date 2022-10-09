@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                     decoration: BoxDecoration(
                         border:
                             Border(bottom: BorderSide(color: Colors.white))),
-                    child: TextFormField(
+                    child: TextFormField(style: TextStyle(color: Colors.white),
                       controller: valuofusername,
                       decoration: const InputDecoration(
                         prefixIcon: Icon(
@@ -56,11 +56,12 @@ class _LoginPageState extends State<LoginPage> {
                     decoration: BoxDecoration(
                         border:
                             Border(bottom: BorderSide(color: Colors.white))),
-                    child: TextFormField(
+                    child: TextFormField(style: TextStyle(color: Colors.white),
                       obscureText: true,
                       controller: valueofpassword,
                       decoration: const InputDecoration(
                         // border: UnderlineInputBorder(),
+                        
                         hintStyle: TextStyle(color: Colors.white54),
                         hintText: 'Password',
                         prefixIcon: Icon(

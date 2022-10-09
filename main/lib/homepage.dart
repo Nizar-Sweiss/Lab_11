@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.popAndPushNamed(context, "Tobics");
+                        Navigator.pushNamed(context, "Tobics");
                       },
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.popAndPushNamed(context, "massenger");
+                    Navigator.pushNamed(context, "massenger");
                   },
                   child: Column(
                     children: [

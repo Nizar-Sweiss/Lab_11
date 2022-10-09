@@ -4,20 +4,22 @@ import 'dart:async';
 import 'package:lab011/Screens/Listening/listeningLessons.dart';
 import 'package:lab011/Components/home_button.dart';
 
-class ListeningLesson1 extends StatelessWidget {
-  const ListeningLesson1({super.key});
+import '../../homepage.dart';
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const GrammerLesson1Screen(title: 'First Scenario'),
-    );
-  }
-}
+// class ListeningLesson1 extends StatelessWidget {
+//   const ListeningLesson1({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(routes:{ "home": (context) => HomePage()},
+//       title: 'Flutter Demo',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: const GrammerLesson1Screen(title: 'First Scenario'),
+//     );
+//   }
+// }
 
 class GrammerLesson1Screen extends StatefulWidget {
   const GrammerLesson1Screen({super.key, required this.title});
@@ -65,10 +67,19 @@ class _GrammerLesson1ScreenState extends State<GrammerLesson1Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 61, 105, 147),
-      appBar: AppBar(
+      appBar: AppBar(actions: [  IconButton(
+                onPressed: () {
+                  Navigator.popAndPushNamed(context, "Home");
+                },
+                icon: Icon(Icons.home)),],
         backgroundColor: Color.fromARGB(255, 30, 73, 114),
         automaticallyImplyLeading: true,
-        title: Text(widget.title),
+        title: 
+           
+         
+            Text(widget.title),
+          
+        
         centerTitle: true,
       ),
       body: ListView(
