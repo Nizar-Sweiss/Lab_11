@@ -66,12 +66,10 @@ class _GrammerLesson2ScreenState extends State<GrammerLesson2Screen> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 61, 105, 147),
       appBar: AppBar(
-        leading: new IconButton(
-          icon: new Icon(Icons.arrow_back, color: Colors.orange),
-          onPressed: () => Navigator.push(context,
-              MaterialPageRoute(builder: (context) => ListeningLessons())),
-        ),
+        backgroundColor: Color.fromARGB(255, 30, 73, 114),
+        automaticallyImplyLeading: true,
         title: Text(widget.title),
+        centerTitle: true,
       ),
       body: ListView(
         children: [
@@ -169,11 +167,23 @@ class _GrammerLesson2ScreenState extends State<GrammerLesson2Screen> {
                   ),
                 ),
                 //
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: Text(
-                    "Today is Jessica's first day of kindergarten.  Jessica and her parents walk to school.  Jessica's Mom walks with her to her classroom.  Jessica meets her teacher.  His name is Mr. Parker.  The school bell rings at 8.45 A.M..  Jessica hugs and kisses her Mom goodbye.  Jessica's Mom says I love you.  At 9.00 A.M., Jessica stands for the National anthem.  Mr. Parker calls out children's names.  Each child yells back Here.  Mr. Parker teaches them about letters.  Mr. Parker teaches them about numbers.  At 10:15 A.M. the students have recess.  Recess is fun.  The students get to play and eat.  At 10:30 A.M. the students go to gym class.  At 11:15 A.M. the students return to Mr. Parker's classroom.  Mr. Parker tells the students to sit on the carpet.  Mr. Parker reads the students a story.  Mr. Parker teaches the students a song.  The lunch bell rings.  Jessica's first day of school is over.",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 1.0,
+                        color: Colors.white,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(
+                              10.0) //                 <--- border radius here
+                          ),
+                    ),
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      "Today is Jessica's first day of kindergarten.  Jessica and her parents walk to school.  Jessica's Mom walks with her to her classroom.  Jessica meets her teacher.  His name is Mr. Parker.  The school bell rings at 8.45 A.M..  Jessica hugs and kisses her Mom goodbye.  Jessica's Mom says I love you.  At 9.00 A.M., Jessica stands for the National anthem.  Mr. Parker calls out children's names.  Each child yells back Here.  Mr. Parker teaches them about letters.  Mr. Parker teaches them about numbers.  At 10:15 A.M. the students have recess.  Recess is fun.  The students get to play and eat.  At 10:30 A.M. the students go to gym class.  At 11:15 A.M. the students return to Mr. Parker's classroom.  Mr. Parker tells the students to sit on the carpet.  Mr. Parker reads the students a story.  Mr. Parker teaches the students a song.  The lunch bell rings.  Jessica's first day of school is over.",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
                   ),
                 )
               ],

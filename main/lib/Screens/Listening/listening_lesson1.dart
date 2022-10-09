@@ -66,13 +66,10 @@ class _GrammerLesson1ScreenState extends State<GrammerLesson1Screen> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 61, 105, 147),
       appBar: AppBar(
-        leading: new IconButton(
-          icon: new Icon(Icons.arrow_back, color: Colors.orange),
-          onPressed: () => Navigator.push(context,
-              MaterialPageRoute(builder: (context) => ListeningLessons())),
-        ),
+        backgroundColor: Color.fromARGB(255, 30, 73, 114),
         automaticallyImplyLeading: true,
         title: Text(widget.title),
+        centerTitle: true,
       ),
       body: ListView(
         children: [
@@ -81,7 +78,7 @@ class _GrammerLesson1ScreenState extends State<GrammerLesson1Screen> {
             alignment: Alignment.center,
             child: Text(
               maxLines: 2,
-              "Listening English Lesson 1: First Snow Fall.",
+              "Listening English Lesson 1:\n First Snow Fall.",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,
@@ -191,11 +188,23 @@ class _GrammerLesson1ScreenState extends State<GrammerLesson1Screen> {
                   ),
                 ),
                 //
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: Text(
-                    "Today is November 26th.  It snowed all day today.  The snow is beautiful.   The snow finally stopped.   My sister and I are excited.   My Mom doesn't like the snow.   My Mom has to shovel the drive way.   My sister and I get to play.   I put on my hat and mittens.   My Mom puts on my scarf.   My Mom zippers my jacket.   My sister puts on her hat and mittens.   My Mom puts on her scarf.   My Mom zippers her jacket.   My sister and I go outside.   We begin to make a snow man.   My Mom starts to shovel the snow.   My sister and I make snow angels.   My sister and I throw snowballs.   It starts to snow again.   We go inside for hot chocolate.",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 1.0,
+                        color: Colors.white,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(
+                              10.0) //                 <--- border radius here
+                          ),
+                    ),
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      "Today is November 26th.  It snowed all day today.  The snow is beautiful.   The snow finally stopped.   My sister and I are excited.   My Mom doesn't like the snow.   My Mom has to shovel the drive way.   My sister and I get to play.   I put on my hat and mittens.   My Mom puts on my scarf.   My Mom zippers my jacket.   My sister puts on her hat and mittens.   My Mom puts on her scarf.   My Mom zippers her jacket.   My sister and I go outside.   We begin to make a snow man.   My Mom starts to shovel the snow.   My sister and I make snow angels.   My sister and I throw snowballs.   It starts to snow again.   We go inside for hot chocolate.",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
                   ),
                 )
               ],
