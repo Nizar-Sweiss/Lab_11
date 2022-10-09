@@ -191,8 +191,8 @@ class _QuestionAndAnswersState extends State<QuestionAndAnswers> {
                       value: Question.questionBank[questionNum].options[index],
                       groupValue: userAnswer,
                       onChanged: (ind) => setState(() {
-                        _doSomething(_btnController1);
                         userAnswer = ind.toString();
+                        _doSomething(_btnController1);
                         ResetCheckButton(_btnController1);
                       }),
                     ),
