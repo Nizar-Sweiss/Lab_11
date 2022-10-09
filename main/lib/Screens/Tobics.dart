@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../Components/TobicsWidget.dart';
 import '../Components/home_button.dart';
@@ -79,9 +80,16 @@ class Tobics extends StatelessWidget {
                   onPressed: () {
                     Navigator.popAndPushNamed(context, "Quizes");
                   },
-                  icon: Icon(Icons.start),
-                  label: Text("Test yourself "),
+                  icon: FaIcon(FontAwesomeIcons.arrowRight),
+                  label: Text(
+                    "Test yourself ",
+                    style:
+                        GoogleFonts.adamina(color: Colors.white, fontSize: 23),
+                  ),
                   style: ElevatedButton.styleFrom(
+                    shadowColor: Color.fromARGB(255, 255, 255, 255),
+                    elevation: 15,
+                    fixedSize: Size(300, 40),
                     shape: new RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(30),
                     ),

@@ -42,97 +42,94 @@ class _HomePageState extends State<HomePage> {
           SizedBox(
             height: 20,
           ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Container(
-              padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 28, 59, 88),
-                  border: Border.all(color: Colors.white70),
-                  borderRadius: BorderRadius.all(Radius.circular(5))),
-              child: Row(
-                children: [
-                  Column(
+          Container(
+            padding: EdgeInsets.all(12),
+            decoration: BoxDecoration(
+                color: Color.fromARGB(255, 28, 59, 88),
+                border: Border.all(color: Colors.white70),
+                borderRadius: BorderRadius.all(Radius.circular(5))),
+            child: Row(
+              children: [
+                Column(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.popAndPushNamed(context, "Tobics");
+                      },
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 30,
+                        foregroundImage: NetworkImage(
+                            "https://thumbs.dreamstime.com/b/case-study-cdr-185723046.jpg"),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Study",
+                      style:
+                          GoogleFonts.acme(color: Colors.white, fontSize: 25),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  width: 60,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    //        setState(() {
+                    //   Navigator.of(context)
+                    //       .push(MaterialPageRoute(builder: (context) {
+                    //     return LoginPage();
+                    //   }));
+                    // });
+                  },
+                  child: Column(
                     children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.popAndPushNamed(context, "Tobics");
-                        },
-                        child: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          radius: 30,
-                          foregroundImage: NetworkImage(
-                              "https://thumbs.dreamstime.com/b/case-study-cdr-185723046.jpg"),
-                        ),
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 30,
+                        foregroundImage: NetworkImage(
+                            "https://cdn-icons-png.flaticon.com/512/2701/2701190.png"),
                       ),
                       SizedBox(
                         height: 10,
                       ),
                       Text(
-                        "Study",
+                        "rivew",
                         style:
                             GoogleFonts.acme(color: Colors.white, fontSize: 25),
                       )
                     ],
                   ),
-                  SizedBox(
-                    width: 75,
+                ),
+                SizedBox(
+                  width: 60,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.popAndPushNamed(context, "massenger");
+                  },
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        foregroundImage: NetworkImage(
+                            "https://static.vecteezy.com/system/resources/previews/004/879/666/original/chat-message-icon-on-a-white-background-free-vector.jpg"),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "chat",
+                        style:
+                            GoogleFonts.acme(color: Colors.white, fontSize: 25),
+                      )
+                    ],
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      //        setState(() {
-                      //   Navigator.of(context)
-                      //       .push(MaterialPageRoute(builder: (context) {
-                      //     return LoginPage();
-                      //   }));
-                      // });
-                    },
-                    child: Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.white,
-                          radius: 30,
-                          foregroundImage: NetworkImage(
-                              "https://cdn-icons-png.flaticon.com/512/2701/2701190.png"),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "rivew",
-                          style: GoogleFonts.acme(
-                              color: Colors.white, fontSize: 25),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 74,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.popAndPushNamed(context, "massenger");
-                    },
-                    child: Column(
-                      children: [
-                        CircleAvatar(
-                          radius: 30,
-                          foregroundImage: NetworkImage(
-                              "https://static.vecteezy.com/system/resources/previews/004/879/666/original/chat-message-icon-on-a-white-background-free-vector.jpg"),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "chat",
-                          style: GoogleFonts.acme(
-                              color: Colors.white, fontSize: 25),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
+                )
+              ],
             ),
           ),
           SizedBox(
@@ -161,29 +158,29 @@ class _HomePageState extends State<HomePage> {
                   style: GoogleFonts.acme(fontSize: 20, color: Colors.white60),
                 )),
           ),
-          Container(
-            margin: EdgeInsets.only(top: 10),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(5))),
-            height: 50,
-            child: ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(
-                  Colors.white,
-                ),
-              ),
-              onPressed: () {
-                // Navigator.of(context)
-                //     .push(MaterialPageRoute(builder: (context) {
-                //   return Home();
-                // }));
-              },
-              child: Text(
-                "Get a certificate",
-                style: GoogleFonts.acme(fontSize: 20, color: Colors.black87),
-              ),
-            ),
-          )
+          // Container(
+          //   margin: EdgeInsets.only(top: 10),
+          //   decoration: BoxDecoration(
+          //       borderRadius: BorderRadius.all(Radius.circular(5))),
+          //   height: 50,
+          //   child: ElevatedButton(
+          //     style: ButtonStyle(
+          //       backgroundColor: MaterialStateProperty.all(
+          //         Colors.white,
+          //       ),
+          //     ),
+          //     onPressed: () {
+          //       // Navigator.of(context)
+          //       //     .push(MaterialPageRoute(builder: (context) {
+          //       //   return Home();
+          //       // }));
+          //     },
+          //     child: Text(
+          //       "Get a certificate",
+          //       style: GoogleFonts.acme(fontSize: 20, color: Colors.black87),
+          //     ),
+          //   ),
+          // )
         ]),
       ),
     );

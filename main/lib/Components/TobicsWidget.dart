@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lab011/Components/words%20_and%20_pictures.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -17,7 +18,7 @@ class Tobicsw extends StatelessWidget {
             Navigator.popAndPushNamed(context, "$myRout");
           },
           child: Container(
-            height: 60,
+            height: 75,
             decoration: BoxDecoration(
               color: Color.fromARGB(255, 80, 108, 135),
               border: Border.all(
@@ -33,7 +34,10 @@ class Tobicsw extends StatelessWidget {
             child: ListTile(
               title: Text(
                 "$title",
-                style: TextStyle(color: Colors.white),
+                style: GoogleFonts.alegreyaSansSc(
+                    color: Colors.white,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold),
               ),
               trailing: topicIcon,
             ),

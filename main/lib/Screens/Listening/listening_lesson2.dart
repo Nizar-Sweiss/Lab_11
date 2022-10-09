@@ -91,27 +91,6 @@ class _GrammerLesson2ScreenState extends State<GrammerLesson2Screen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // ElevatedButton(
-                //   onPressed: () {
-                //     player.play(AssetSource('theme_01.mp3'));
-                //   },
-                //   child: const Text('Play Audio'),
-                // ),
-                // ElevatedButton(
-                //     onPressed: () {
-                //       player.stop();
-                //     },
-                //     child: const Text('Stop Audio')),
-                // ElevatedButton(
-                //     onPressed: () {
-                //       player.pause();
-                //     },
-                //     child: const Text('Pause ')),
-                // ElevatedButton(
-                //     onPressed: () {
-                //       player.resume();
-                //     },
-                //     child: const Text('Resume')),
                 Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Container(
