@@ -192,6 +192,7 @@ class _QuestionAndAnswersState extends State<QuestionAndAnswers> {
                       groupValue: userAnswer,
                       onChanged: (ind) => setState(() {
                         userAnswer = ind.toString();
+                        _doSomething(_btnController1);
                         ResetCheckButton(_btnController1);
                       }),
                     ),

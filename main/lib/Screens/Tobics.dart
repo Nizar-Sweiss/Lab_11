@@ -13,24 +13,12 @@ class Tobics extends StatelessWidget {
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 61, 105, 147),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 61, 105, 147),
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            backgroundColor: Color.fromARGB(255, 61, 105, 147),
+            title: Text("Topics"),
+            centerTitle: true,
+            actions: [
               HomeButton(context),
-              Text("Topics"),
-              // SizedBox(
-              //   width: 193,
-              // ),
-              IconButton(
-                  onPressed: () {
-                    // edit the home
-                    Navigator.popAndPushNamed(context, "Home");
-                  },
-                  icon: Icon(Icons.home)),
-            ],
-          ),
-        ),
+            ]),
         body: Center(
             child: Container(
           decoration: BoxDecoration(
